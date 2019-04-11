@@ -14,15 +14,15 @@ def hello():
 def circbuzz():
     c = Cricbuzz()
     matches = c.matches()
-
+    newMatches = []
     for match in matches:
         try:
             if match['type'] == 'T20' :
-                list.append(match)
+                newMatches.append(match)
         except:
             return "Error occured in interation"             
 
-    return json.dumps(list, indent=4)
+    return json.dumps(newMatches, indent=4)
 
 if __name__ == '__main__':
     app.run('localhost',4449)
